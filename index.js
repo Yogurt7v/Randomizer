@@ -36,8 +36,10 @@ let secondDoc =
 function generateDate() {
   date = new Date();
   let day = date.getDate();
-  if (date.toString().startsWith("Sun") || date.toString().startsWith("Sat")) {
+  if (date.toString().startsWith("Sat")) {
     day = day + 2;
+  } else if (date.toString().startsWith("Sun")) {
+    day = day + 1;
   }
   console.log(day);
   if (day < 10) {
@@ -48,5 +50,5 @@ function generateDate() {
   } else month = date.getMonth() + 1;
   return (date = `${day}:${month}:${date.getFullYear()}`);
 }
-generateDate();
-console.log(date);
+generateDate(); // проверка работы функции
+console.log(date); // проверка работы функции
