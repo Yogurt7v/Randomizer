@@ -31,13 +31,22 @@ let firstDoc = Math.floor(Math.random() * (maxDoc - minDoc + 1) + minDoc);
 let secondDoc =
   Math.floor((Math.random() * (maxDoc - minDoc) + minDoc) * 100) / 100;
 
-// Генератор даты - не работает!!//
+// Генератор даты - работает перенос выходных!!//
 
-// function generateDate() {
-//   date = new Date(startDate).toString();
-//   if (date.startsWith("Sun") || date.startsWith("Sat")) {
-//     generateDate();
-//   } else {
-//     return date;
-//   }
-// }
+function generateDate() {
+  date = new Date();
+  let day = date.getDate();
+  if (date.toString().startsWith("Sun") || date.toString().startsWith("Sat")) {
+    day = day + 2;
+  }
+  console.log(day);
+  if (day < 10) {
+    day = "0" + day;
+  }
+  if (date.getMonth() < 10) {
+    month = "0" + (date.getMonth() + 1);
+  } else month = date.getMonth() + 1;
+  return (date = `${day}:${month}:${date.getFullYear()}`);
+}
+generateDate();
+console.log(date);
