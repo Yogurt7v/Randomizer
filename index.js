@@ -1,12 +1,12 @@
-// let sum = document.getElementById("sum");
-// let size = document.getElementById("size");
-// let random = document.getElementById("random");
+// let sum = document.querySelector("sum");
+// let size = document.querySelector("size");
+// let random = document.querySelector("random");
 
-// let startBtn = document.getElementById("start-btn");
+// let startBtn = document.querySelector("start-btn");
 
 // let sumValue = sum.value;
 
-//пока очень тупо, но поробуем сделать для начала функции//
+// пока очень тупо, но поробуем сделать для начала функции//
 let sum = prompt("введите сумму документа");
 console.log(sum);
 let size = prompt("введите количество документов");
