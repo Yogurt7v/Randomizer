@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 5px;
+}
+
+button {
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(7, 103, 123, 0.899);
+}
