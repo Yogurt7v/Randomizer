@@ -7,16 +7,31 @@
 // let sumValue = sum.value;
 
 // пока очень тупо, но поробуем сделать для начала функции//
-let sum = prompt("введите сумму документа");
-console.log(sum);
-let size = prompt("введите количество документов");
-console.log(size);
-let random = prompt("введите разлёт в процентах");
-console.log(random);
+// let sum = prompt("введите сумму документа");
+// console.log(sum);
+// let size = prompt("введите количество документов");
+// console.log(size);
+// let random = prompt("введите разлёт в процентах");
+// console.log(random);
+
+// переменные для случайной даты
 let startDate = prompt("введите стартовую дату (Год, Месяц, День.)");
 console.log(startDate);
 let lastDate = prompt("введите конечную дату(Год, Месяц, День,)");
 console.log(lastDate);
+
+let startDateUni = new Date(startDate);
+let startDateUniCode = startDateUni.getTime();
+let lastDateUni = new Date(lastDate);
+let lastDateUniCode = lastDateUni.getTime();
+
+// функция случайной даты//
+
+let randomDateUnicode = Math.floor(
+  Math.random() * (lastDateUniCode - startDateUniCode + 1) + startDateUniCode
+);
+let randomDate = new Date(randomDateUnicode);
+console.log(randomDate);
 
 // функция генерирования суммы без копеек = работает//
 
@@ -34,7 +49,7 @@ let secondDoc =
 // Генератор даты - работает перенос выходных!!//
 
 function generateDate() {
-  date = new Date();
+  date = new Date(randomDate);
   let day = date.getDate();
   if (date.toString().startsWith("Sat")) {
     day = day + 2;
