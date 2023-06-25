@@ -33,20 +33,7 @@ let randomDateUnicode = Math.floor(
 let randomDate = new Date(randomDateUnicode);
 console.log(randomDate);
 
-// функция генерирования суммы без копеек = работает//
-
-let defaultDoc = sum / size;
-let minDoc = defaultDoc - defaultDoc * (random / 100);
-let maxDoc = defaultDoc + defaultDoc * (random / 100);
-
-let firstDoc = Math.floor(Math.random() * (maxDoc - minDoc + 1) + minDoc);
-
-// функция генерирования суммы с копеками = работает//
-
-let secondDoc =
-  Math.floor((Math.random() * (maxDoc - minDoc) + minDoc) * 100) / 100;
-
-// Генератор даты - работает перенос выходных!!//
+// Генератор даты - Работает//
 
 function generateDate() {
   date = new Date(randomDate);
@@ -67,3 +54,16 @@ function generateDate() {
 }
 generateDate(); // проверка работы функции
 console.log(date); // проверка работы функции
+
+// функция генерирования суммы без копеек = работает//
+
+let defaultDoc = sum / size;
+let minDoc = defaultDoc - defaultDoc * (random / 100);
+let maxDoc = defaultDoc + defaultDoc * (random / 100);
+
+let firstDoc = Math.floor(Math.random() * (maxDoc - minDoc + 1) + minDoc);
+
+// функция генерирования суммы с копеками = работает//
+
+let secondDoc =
+  Math.floor((Math.random() * (maxDoc - minDoc) + minDoc) * 100) / 100;
