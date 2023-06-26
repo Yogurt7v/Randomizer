@@ -47,6 +47,9 @@ function generateDate() {
   if (day < 10) {
     day = "0" + day;
   }
+  if (day > 31) {
+    day = 31;
+  }
   if (date.getMonth() <= 9) {
     month = "0" + (date.getMonth() + 1);
   } else month = date.getMonth() + 1;
@@ -67,24 +70,22 @@ function secondDoc() {
   return Math.floor((Math.random() * (maxDoc - minDoc) + minDoc) * 100) / 100;
 }
 
-// заверашающая функция пока без копеек//
+// заверашающая функция с копейками и посчётом остатков - работает//
 function randomize() {
   let finalSum = 0;
-  for (let i = 0; i < size; i++) {
+
+  for (let i = 0; i < size - 1; i++) {
     let finalValue = secondDoc();
     let finalDate = generateDate();
     let invalidDate = new Date(finalDate);
     if (invalidDate == "Invalid Date") {
       finalDate = generateDate();
     }
-    // finalSum = finalSum + finalValue; // dont work
-    // if (finalSum > sum) {
-    //   finalValue = finalSum - (finalSum - sum);
-    // } else if (finalSum < sum) {
-    //   finalValue = finalValue + (sum - finalSum);
-    // }
+    finalSum = finalSum + finalValue;
     console.log("Дата " + finalDate + "\n" + "Сумма документа", finalValue);
-    console.log(finalSum);
   }
+  let endDate = generateDate();
+  let endValue = Math.floor((sum - finalSum) * 100) / 100;
+  console.log("Дата " + endDate + "\n" + "Сумма документа", endValue);
 }
 randomize();
