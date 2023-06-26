@@ -47,7 +47,7 @@ function generateDate() {
   if (day < 10) {
     day = "0" + day;
   }
-  if (date.getMonth() < 9) {
+  if (date.getMonth() <= 9) {
     month = "0" + (date.getMonth() + 1);
   } else month = date.getMonth() + 1;
   return (date = `${day}:${month}:${date.getFullYear()}`);
