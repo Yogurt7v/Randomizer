@@ -15,10 +15,6 @@ startBtn.onclick = function () {
   let lastDate = lastDateValue.value;
 
   // // переменные для случайной даты
-  // let startDate = prompt("введите стартовую дату (Год, Месяц, День.)");
-  // console.log(startDate);
-  // let lastDate = prompt("введите конечную дату(Год, Месяц, День,)");
-  // console.log(lastDate);
 
   let startDateUni = new Date(startDate);
   let startDateUniCode = startDateUni.getTime();
@@ -26,8 +22,6 @@ startBtn.onclick = function () {
   let lastDateUniCode = lastDateUni.getTime();
 
   // функция случайной даты//
-
-  // console.log(randomDate);
 
   // Генератор даты - Работает//
 
@@ -92,7 +86,8 @@ startBtn.onclick = function () {
   randomize();
 };
 
-/* добавить кнопку очистки
+/*   добавить вывод результа
+  добавить кнопку очистки
   добавить проверку на выходные
-  добавить вывод результа 
+  проверить вывод копеек
 */
