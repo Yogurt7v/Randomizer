@@ -9,19 +9,21 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <form id="form">
-          <input id="sum" type="number" />
-          <span>Сумма документа</span>
-          <input id="size" type="number" />
-          <span>Количество документов</span>
-          <input id="random" type="number" />
-          <span>Вариация</span>
-          <input type="radio" name="" id="checker" checked />
-          <span>С копейками</span>
-        </form>
-        <button id="start-btn">Start</button>
+        <input class="sum" type="number" value="1000" />
+        <span>Сумма документа</span>
+        <input class="size" type="number" value="10" />
+        <span>Количество документов</span>
+        <input class="random" type="number" value="10" />
+        <span>Вариация</span>
+        <input type="radio" name="checked" class="checker" checked />
+        <span>С копейками</span>
+        <input type="startDate" class="startDate" value="2022,1,1" />
+        <span>Начальная дата</span>
+        <input type="lastDate" class="lastDate" value="2023,12,31" />
+        <span>Конечная дата</span>
+        <button class="start-btn">Start</button>
       </div>
-      <div id="result"></div>
+      <div class="result"></div>
     </div>
 
     <script src="index.js"></script>
