@@ -9,19 +9,27 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <input class="sum" type="number" value="1000" />
-        <span>Сумма документа</span>
+        <input class="sum" type="number" value="1000000" />
+        <span>Общая Сумма</span>
         <input class="size" type="number" value="10" />
         <span>Количество документов</span>
-        <input class="random" type="number" value="10" />
-        <span>Вариация</span>
-        <input type="radio" name="checked" class="checker" checked />
-        <span>С копейками</span>
-        <input type="startDate" class="startDate" value="2022,1,1" />
-        <span>Начальная дата</span>
-        <input type="lastDate" class="lastDate" value="2023,12,31" />
-        <span>Конечная дата</span>
+        <input class="random" type="number" value="15" />
+        <span>Вариация (+-)%</span>
+        <!-- <div class="checker">
+          <input type="radio" name="checked" checked />
+          <span>С копейками</span>
+          <input type="radio" name="checked1" />
+          <span>Без копеек</span>
+        </div> -->
+        <input type="startDate" class="startDate" value="2023,4,1" />
+        <span class="notes">Начальная дата</span>
+        <span>(Год , месяц , день)</span>
+        <input type="lastDate" class="lastDate" value="2023,6,30" />
+        <span class="notes">Конечная дата</span>
+        <span>(Год , месяц , день)</span>
         <button class="start-btn">Start</button>
+        <button class="clear-btn">Clear</button>
+        <div class="note">Результат в консоли F12</div>
       </div>
       <div class="result"></div>
     </div>

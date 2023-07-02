@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;1,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "PT Serif", serif;
+  font-style: italic;
+  font-weight: 400;
 }
 
 #form {
@@ -16,11 +21,63 @@ input {
 
 button {
   border-radius: 5px;
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: rgba(7, 103, 123, 0.899);
+  margin: auto;
+  margin-bottom: 10px;
+  height: 25px;
+  width: 50%;
 }
 
 #start-btn {
   margin-top: 10px;
   width: 30%;
+  margin-bottom: 10px;
+}
+
+span {
+  margin-top: 2px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+input {
+  justify-content: center;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  padding-left: 150px;
+  padding-top: 50px;
+}
+.wrapper {
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  background: -webkit-linear-gradient(
+    90deg,
+    #37cd78,
+    #00b3f7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #37cd78,
+    #00b3f7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 1px solid black;
+  border-radius: 15px;
+  text-align: center;
+}
+.checker {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.notes {
+  margin-bottom: 0;
 }

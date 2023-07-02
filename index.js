@@ -4,11 +4,26 @@ let randomValue = document.querySelector(`.random`);
 let startDateValue = document.querySelector(`.startDate`);
 let lastDateValue = document.querySelector(`.lastDate`);
 
-let startBtn = document.querySelector(`button`);
+let startBtn = document.querySelector(`.start-btn`);
+let clearBtn = document.querySelector(`.clear-btn`);
 let result = document.querySelector(`.result`);
 
-let dateArr = [];
-let docArr = [];
+let vacation = [
+  `01.01.2023`,
+  `02.01.2023`,
+  `03.01.2023`,
+  `04.01.2023`,
+  `05.01.2023`,
+  `06.01.2023`,
+  `23.02.2023`,
+  `08.03.2023`,
+  `29.04.2023`,
+  `30.04.2023`,
+  `01.05.2023`,
+  `09.05.2023`,
+  `10.05.2023`,
+  `12.06.2023`,
+];
 
 startBtn.onclick = function () {
   let sum = sumValue.value;
@@ -50,7 +65,7 @@ startBtn.onclick = function () {
     if (date.getMonth() < 9) {
       month = "0" + (date.getMonth() + 1);
     } else month = date.getMonth() + 1;
-    return (date = `${day}:${month}:${date.getFullYear()}`);
+    return (date = `${day}.${month}.${date.getFullYear()}`);
   }
 
   // функция генерирования суммы без копеек = работает//
@@ -59,7 +74,9 @@ startBtn.onclick = function () {
   let minDoc = defaultDoc - defaultDoc * (random / 100);
   let maxDoc = defaultDoc + defaultDoc * (random / 100);
 
-  let firstDoc = Math.floor(Math.random() * (maxDoc - minDoc + 1) + minDoc);
+  function firstDoc() {
+    return Math.floor(Math.random() * (maxDoc - minDoc + 1) + minDoc);
+  }
 
   // функция генерирования суммы с копеками = работает//
 
@@ -72,10 +89,13 @@ startBtn.onclick = function () {
     let finalSum = 0;
 
     for (let i = 0; i < size - 1; i++) {
-      let finalValue = secondDoc();
+      let finalValue = firstDoc();
       let finalDate = generateDate();
       let invalidDate = new Date(finalDate);
       if (invalidDate == "Invalid Date") {
+        finalDate = generateDate();
+      }
+      if (vacation.includes(finalDate)) {
         finalDate = generateDate();
       }
       finalSum = finalSum + finalValue;
