@@ -7,6 +7,9 @@ let lastDateValue = document.querySelector(`.lastDate`);
 let startBtn = document.querySelector(`button`);
 let result = document.querySelector(`.result`);
 
+let dateArr = [];
+let docArr = [];
+
 startBtn.onclick = function () {
   let sum = sumValue.value;
   let size = sizeValue.value;
@@ -86,8 +89,11 @@ startBtn.onclick = function () {
   randomize();
 };
 
+clearBtn.onclick = function () {
+  console.clear();
+};
+
 /*   добавить вывод результа
-  добавить кнопку очистки
   добавить проверку на выходные
   проверить вывод копеек
 */
