@@ -118,7 +118,7 @@ startBtn.onclick = function () {
     let finalSum = 0;
 
     for (let i = 0; i < size - 1; i++) {
-      let finalValue = firstDoc();
+      let finalValue = secondDoc();
       let finalDate = generateDate();
       let invalidDate = new Date(finalDate);
       if (invalidDate == "Invalid Date") {
