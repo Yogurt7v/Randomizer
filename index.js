@@ -104,13 +104,13 @@ startBtn.onclick = function () {
   let maxDoc = defaultDoc + defaultDoc * (random / 100);
 
   function firstDoc() {
-    return Math.floor(Math.random() * (maxDoc - minDoc + 1) + minDoc);
+    return Math.round(Math.random() * (maxDoc - minDoc + 1) + minDoc);
   }
 
   // функция генерирования суммы с копеками = работает//
 
   function secondDoc() {
-    return Math.floor((Math.random() * (maxDoc - minDoc) + minDoc) * 100) / 100;
+    return Math.round((Math.random() * (maxDoc - minDoc) + minDoc) * 100) / 100;
   }
 
   // заверашающая функция с копейками и посчётом остатков - работает//
@@ -131,7 +131,7 @@ startBtn.onclick = function () {
       console.log("Дата " + finalDate + "\n" + "Сумма документа", finalValue);
     }
     let endDate = generateDate();
-    let endValue = Math.floor((sum - finalSum) * 100) / 100;
+    let endValue = Math.round((sum - finalSum) * 100) / 100;
     console.log("Дата " + endDate + "\n" + "Сумма документа", endValue);
   }
 
