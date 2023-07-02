@@ -22,11 +22,12 @@ input {
 button {
   border-radius: 5px;
   color: rgb(255, 255, 255);
-  background-color: rgba(7, 103, 123, 0.899);
+  background-color: rgba(6, 77, 91, 0.899);
   margin: auto;
   margin-bottom: 10px;
   height: 25px;
   width: 50%;
+  font-size: large;
 }
 
 #start-btn {
@@ -61,12 +62,12 @@ input {
   flex-direction: column;
   background: -webkit-linear-gradient(
     90deg,
-    #37cd78,
+    #34ac68,
     #00b3f7
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     90deg,
-    #37cd78,
+    #34ac68,
     #00b3f7
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: 1px solid black;
