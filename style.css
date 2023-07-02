@@ -57,7 +57,7 @@ input {
   padding-top: 50px;
 }
 .wrapper {
-  padding: 20px 20px 20px 20px;
+  padding: 35px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   background: -webkit-linear-gradient(
