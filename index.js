@@ -8,6 +8,10 @@ let startBtn = document.querySelector(`.start-btn`);
 let clearBtn = document.querySelector(`.clear-btn`);
 let result = document.querySelector(`.result`);
 
+// let withCoin = document.querySelector(`#withCoin`);
+// let withoutCoin = document.querySelector(`#withoutCoin`);
+// let x;
+
 let vacation = [
   `01.01.2021`,
   `04.01.2021`,
@@ -117,7 +121,7 @@ startBtn.onclick = function () {
   function randomize() {
     let finalSum = 0;
 
-    for (let i = 0; i < size - 1; i++) {
+    for (let i = 1; i < size; i++) {
       let finalValue = secondDoc();
       let finalDate = generateDate();
       let invalidDate = new Date(finalDate);
@@ -129,14 +133,14 @@ startBtn.onclick = function () {
       }
       finalSum = finalSum + finalValue;
       console.log(
-        i + ")" + " Дата " + finalDate + "\n" + "Сумма документа",
+        i + ")" + " Дата " + finalDate + "\n" + "Сумма документа:",
         finalValue
       );
     }
     let endDate = generateDate();
     let endValue = Math.round((sum - finalSum) * 100) / 100;
     console.log(
-      size + ")" + " Дата " + endDate + "\n" + "Сумма документа",
+      size + ")" + " Дата " + endDate + "\n" + "Сумма документа:",
       endValue
     );
   }

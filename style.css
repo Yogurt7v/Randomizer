@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
+  font-family: PT Serif, serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -53,20 +53,20 @@ input {
 .container {
   width: 500px;
   height: 500px;
-  padding-left: 150px;
-  padding-top: 50px;
+  margin: auto;
 }
 .wrapper {
+  margin: 70px 50px 70px 50px;
   padding: 35px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   background: -webkit-linear-gradient(
-    90deg,
+    115deg,
     #34ac68,
     #00b3f7
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
+    115deg,
     #34ac68,
     #00b3f7
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -74,10 +74,15 @@ input {
   border-radius: 15px;
   text-align: center;
 }
-.checker {
+/* .checker {
   padding-top: 10px;
   padding-bottom: 10px;
+  display: flex;
 }
+.btn-coin {
+  box-sizing: content-box;
+  max-width: 40%;
+} */
 
 .notes {
   margin-bottom: 0;
