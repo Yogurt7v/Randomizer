@@ -128,11 +128,17 @@ startBtn.onclick = function () {
         finalDate = generateDate();
       }
       finalSum = finalSum + finalValue;
-      console.log("Дата " + finalDate + "\n" + "Сумма документа", finalValue);
+      console.log(
+        i + ")" + " Дата " + finalDate + "\n" + "Сумма документа",
+        finalValue
+      );
     }
     let endDate = generateDate();
     let endValue = Math.round((sum - finalSum) * 100) / 100;
-    console.log("Дата " + endDate + "\n" + "Сумма документа", endValue);
+    console.log(
+      size + ")" + " Дата " + endDate + "\n" + "Сумма документа",
+      endValue
+    );
   }
 
   randomize();
