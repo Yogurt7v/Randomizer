@@ -138,6 +138,9 @@ startBtn.onclick = function () {
       );
     }
     let endDate = generateDate();
+    if (vacation.includes(endDate)) {
+      endDate = generateDate();
+    }
     let endValue = Math.round((sum - finalSum) * 100) / 100;
     console.log(
       size + ")" + " Дата " + endDate + "\n" + "Сумма документа:",
