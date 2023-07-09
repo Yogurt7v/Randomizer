@@ -138,12 +138,22 @@ startBtn.onclick = function () {
     values.push(endValue);
   }
   randomize();
+  // dateresult.innerHTML = dates;
+  // valueresult.innerHTML = values;
   console.log(dates);
   console.log(values);
+
+  let str = ` `;
+  for (let i = 0; i < dates.length; i++) {
+    str +=
+      i + 1 + `) ` + `Дата: ${dates[i]}   ` + `Сумма: ${values[i]}` + "<br>";
+  }
+  result.innerHTML = str;
 };
 
 clearBtn.onclick = function () {
   dates = [];
   values = [];
+  result.innerHTML = ` `;
   console.clear();
 };
