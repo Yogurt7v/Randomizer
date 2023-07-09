@@ -150,8 +150,6 @@ startBtn.onclick = function () {
     values.push(endValue);
   }
   randomize();
-  // dateresult.innerHTML = dates;
-  // valueresult.innerHTML = values;
   console.log(dates);
   console.log(values);
 
