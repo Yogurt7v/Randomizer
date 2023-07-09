@@ -8,9 +8,10 @@ let startBtn = document.querySelector(`.start-btn`);
 let clearBtn = document.querySelector(`.clear-btn`);
 let result = document.querySelector(`.result`);
 
-// let withCoin = document.querySelector(`#withCoin`);
-// let withoutCoin = document.querySelector(`#withoutCoin`);
-// let x;
+let dates = [];
+let values = [];
+
+let a;
 
 let vacation = [
   `01.01.2021`,
@@ -57,7 +58,6 @@ let vacation = [
   `10.05.2023`,
   `12.06.2023`,
 ];
-
 startBtn.onclick = function () {
   let sum = sumValue.value;
   let size = sizeValue.value;
@@ -65,17 +65,14 @@ startBtn.onclick = function () {
   let startDate = startDateValue.value;
   let lastDate = lastDateValue.value;
 
-  // // переменные для случайной даты
-
   let startDateUni = new Date(startDate);
   let startDateUniCode = startDateUni.getTime();
   let lastDateUni = new Date(lastDate);
   let lastDateUniCode = lastDateUni.getTime();
+  let date = 0;
+  a = size;
 
-  // функция случайной даты//
-
-  // Генератор даты - Работает//
-
+  // функция генерирования даты
   function generateDate() {
     let randomDateUnicode = Math.round(
       Math.random() * (lastDateUniCode - startDateUniCode + 1) +
@@ -98,62 +95,55 @@ startBtn.onclick = function () {
     if (date.getMonth() < 9) {
       month = "0" + (date.getMonth() + 1);
     } else month = date.getMonth() + 1;
-    return (date = `${day}.${month}.${date.getFullYear()}`);
+    return `${day}.${month}.${date.getFullYear()}`;
   }
-
-  // функция генерирования суммы без копеек = работает//
 
   let defaultDoc = sum / size;
   let minDoc = defaultDoc - defaultDoc * (random / 100);
   let maxDoc = defaultDoc + defaultDoc * (random / 100);
 
+  //функция без копеек
   function firstDoc() {
     return Math.round(Math.random() * (maxDoc - minDoc + 1) + minDoc);
   }
-
-  // функция генерирования суммы с копеками = работает//
-
+  // функция с копейками
   function secondDoc() {
     return Math.round((Math.random() * (maxDoc - minDoc) + minDoc) * 100) / 100;
   }
 
-  // заверашающая функция с копейками и посчётом остатков - работает//
+  //финальная фунция
   function randomize() {
     let finalSum = 0;
 
-    for (let i = 1; i < size; i++) {
-      let finalValue = secondDoc();
+    for (let i = 1; i <= size; i++) {
       let finalDate = generateDate();
-      let invalidDate = new Date(finalDate);
-      if (invalidDate == "Invalid Date") {
+      if (vacation.includes(finalDate)) {
         finalDate = generateDate();
       }
       if (vacation.includes(finalDate)) {
         finalDate = generateDate();
       }
+      if (vacation.includes(finalDate)) {
+        finalDate = generateDate();
+      }
+      dates.push(finalDate);
+    }
+    for (let j = 1; j < size; j++) {
+      let finalValue = firstDoc();
+      values.push(finalValue);
       finalSum = finalSum + finalValue;
-      console.log(
-        i + ")" + " Дата " + finalDate + "\n" + "Сумма документа:",
-        finalValue
-      );
     }
-    let endDate = generateDate();
-    if (vacation.includes(endDate)) {
-      endDate = generateDate();
-    }
-    let endValue = Math.round((sum - finalSum) * 100) / 100;
-    console.log(
-      size + ")" + " Дата " + endDate + "\n" + "Сумма документа:",
-      endValue
-    );
-  }
 
+    let endValue = Math.round((sum - finalSum) * 100) / 100;
+    values.push(endValue);
+  }
   randomize();
+  console.log(dates);
+  console.log(values);
 };
 
 clearBtn.onclick = function () {
+  dates = [];
+  values = [];
   console.clear();
 };
-
-/*   добавить вывод результа
- */
