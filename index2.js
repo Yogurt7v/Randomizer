@@ -66,6 +66,7 @@ let vacation = [
   `29.04.2023`,
   `30.04.2023`,
   `01.05.2023`,
+  `08.05.2023`,
   `09.05.2023`,
   `10.05.2023`,
   `12.06.2023`,
@@ -129,15 +130,10 @@ startBtn.onclick = function () {
 
     for (let i = 1; i <= size; i++) {
       let finalDate = generateDate();
-      if (vacation.includes(finalDate)) {
+      while (vacation.includes(finalDate)) {
         finalDate = generateDate();
       }
-      if (vacation.includes(finalDate)) {
-        finalDate = generateDate();
-      }
-      if (vacation.includes(finalDate)) {
-        finalDate = generateDate();
-      }
+      
       dates.push(finalDate);
     }
     for (let j = 1; j < size; j++) {
